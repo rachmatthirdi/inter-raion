@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">project Onboarding</string>
+    <string name="tagline">Temukan mentor terbaikmu bersama Mentorify!</string>
+    <string name="selamat">Selamat Datang</string>
+    <string name="lanjutkan">Lanjutkan</string>
+    <string name="peta">Cari Berdasarkan Peta</string>
+    <string name="bidang">Tersedia Berbagai Bidang</string>
+</resources>
