@@ -3,4 +3,22 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="purple">#343A99</color>
+    <color name="primary">#343B99</color>
+    <color name="primary100">#CCCEE5</color>
+    <color name="primary200">#999DCC</color>
+    <color name="primary300">#666CB2</color>
+    <color name="primary500">#272C72</color>
+    <color name="primary600">#1A1D4C</color>
+    <color name="primary700">#0D0E26</color>
+    <color name="secondary">#61BDF6</color>
+    <color name="secondary100">#D7EEFC</color>
+    <color name="secondary200">#B0DEFA</color>
+    <color name="secondary300">#88CDF8</color>
+    <color name="secondary500">#488DB8</color>
+    <color name="secondary600">#305E7B</color>
+    <color name="secondary700">#182F3D</color>
+    <color name="neutral">#A9A9A9</color>
+    <color name="gray">#55565B</color>
+    <color name="black1">#252525</color>
+    <color name="white1">#FAFAFA</color>
 </resources>
