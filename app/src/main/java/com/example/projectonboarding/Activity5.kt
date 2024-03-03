@@ -13,7 +13,7 @@ class Activity5: AppCompatActivity() {
 
         btnLanjutkan = findViewById(R.id.button4)
         btnLanjutkan?.setOnClickListener {
-            startActivity(Intent(this@Activity5, Activity4::class.java)) //kembali ke sebelumnya
+            startActivity(Intent(this@Activity5, Login::class.java)) //kembali ke sebelumnya
         }
     }
 }
