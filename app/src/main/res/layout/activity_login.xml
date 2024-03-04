@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white1"
     tools:context=".Login">
+
 
     <EditText
         android:id="@+id/etEmailLog"
@@ -13,7 +15,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="45dp"
-        android:background="#F4ECEC"
+        android:background="@drawable/editextborder"
         android:ems="10"
         android:inputType="text|textEmailAddress"
         android:minHeight="48dp"
@@ -29,7 +31,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="11dp"
-        android:background="#F4ECEC"
+        android:background="@drawable/editextborder"
         android:ems="10"
         android:inputType="text|textPassword"
         android:minHeight="48dp"
