@@ -10,10 +10,7 @@ class SplashScreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash) // Mengatur tata letak splash screen
-
-        // Tambahkan kode lain yang diperlukan di sini
-        // Misalnya, mengatur durasi tampilan splash screen
+        setContentView(R.layout.activity_splash)
         val handler = Handler()
         handler.postDelayed({
             val intent = Intent(this@SplashScreenActivity, Activity2::class.java)

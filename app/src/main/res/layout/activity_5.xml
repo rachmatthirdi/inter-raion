@@ -27,12 +27,11 @@
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="357dp"
-        android:layout_height="49dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/hubungi"
         android:textSize="27sp"
-
-        android:textStyle="bold"
+        android:fontFamily="@font/satoshi_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +44,7 @@
         android:gravity="center"
         android:text="@string/tagline"
         android:textSize="17sp"
-        android:typeface="sans"
+        android:fontFamily="@font/satoshi_medium"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
