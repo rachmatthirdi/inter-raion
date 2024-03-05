@@ -1,5 +1,6 @@
 package com.example.projectonboarding;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,6 +12,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -21,6 +27,7 @@ public class Register extends AppCompatActivity {
     private Button btnRegister;
     private DatabaseReference database;
     private ImageView arrowBack;
+    private FirebaseAuth auth;
     private boolean isValidEmail(String email) {
         Pattern pattern = Patterns.EMAIL_ADDRESS;
         return pattern.matcher(email).matches();
@@ -38,6 +45,7 @@ public class Register extends AppCompatActivity {
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
         database = FirebaseDatabase.getInstance().getReferenceFromUrl(
                 "https://loginregist-ea208-default-rtdb.firebaseio.com/");
+        auth = FirebaseAuth.getInstance();
 
         arrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,13 +71,17 @@ public class Register extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"E-mail tidak valid",Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    database = FirebaseDatabase.getInstance().getReference("users");
-                    database.child(username).child("username").setValue(username);
-                    database.child(username).child("email").setValue(email);
-                    database.child(username).child("password").setValue(password);
-                    Toast.makeText(getApplicationContext(),"Register Berhasil",Toast.LENGTH_SHORT).show();
-                    Intent regist = new Intent(getApplicationContext(), Login.class);
-                    startActivity(regist);
+                   auth.createUserWithEmailAndPassword(email,password).addOnCompleteListener( new OnCompleteListener<AuthResult>() {
+                       @Override
+                       public void onComplete(@NonNull Task<AuthResult> task) {
+                           if (task.isSuccessful()){
+                                Toast.makeText(getApplicationContext(),"Pendaftaran Berhasil",Toast.LENGTH_SHORT).show();
+                               FirebaseUser user = auth.getCurrentUser();
+                                Intent sign = new Intent(getApplicationContext(),Login.class);
+                                startActivity(sign);
+                           }
+                       }
+                   });
                 }
             }
         });
