@@ -11,14 +11,16 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="95dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="93dp"
+        android:layout_marginBottom="517dp"
         android:fontFamily="@font/satoshi_bold"
         android:text="Cek Email Anda"
         android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/button5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView10"
-        app:layout_constraintTop_toTopOf="@+id/imageView10" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -26,7 +28,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="39dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="22dp"
         app:layout_constraintBottom_toTopOf="@+id/textView14"
         app:layout_constraintEnd_toStartOf="@+id/textView13"
@@ -39,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="11dp"
-        android:layout_marginBottom="423dp"
+        android:layout_marginBottom="425dp"
         android:fontFamily="@font/satoshi_regular"
         android:text="@string/kami"
         android:textSize="16sp"
@@ -50,18 +52,18 @@
     <Button
         android:id="@+id/button5"
         style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:layout_width="381dp"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="49dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="68dp"
         android:backgroundTint="@color/primary"
+        android:minWidth="70dip"
         android:text="Selanjutnya"
         android:textAllCaps="false"
         android:textColor="@color/white1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14" />
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
 </androidx.constraintlayout.widget.ConstraintLayout>
