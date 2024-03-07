@@ -11,4 +11,6 @@
                         4 digit kode ke email \nAnda.</string>
     <string name="kami">Kami telah mengirimkan pesan konfirmasi atur
                         \nulang kata sandi ke email Anda. Kembali lagi ke \naplikasi setelah konfirmasi.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
