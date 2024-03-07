@@ -50,7 +50,7 @@ public class Register extends AppCompatActivity {
         arrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent keLogin = new Intent (getApplicationContext(), Login.class);
+                Intent keLogin = new Intent (getApplicationContext(), Profile.class);
                 startActivity(keLogin);
             }
         });
@@ -76,8 +76,8 @@ public class Register extends AppCompatActivity {
                        public void onComplete(@NonNull Task<AuthResult> task) {
                            if (task.isSuccessful()){
                                 Toast.makeText(getApplicationContext(),"Pendaftaran Berhasil",Toast.LENGTH_SHORT).show();
-                               FirebaseUser user = auth.getCurrentUser();
-                                Intent sign = new Intent(getApplicationContext(),Login.class);
+//                               FirebaseUser user = auth.getCurrentUser();
+                                Intent sign = new Intent(getApplicationContext(),Profile.class);
                                 startActivity(sign);
                            }
                        }

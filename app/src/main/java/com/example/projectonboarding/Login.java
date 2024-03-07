@@ -30,15 +30,15 @@ public class Login extends AppCompatActivity {
     private DatabaseReference database, databaseAdmin;
     private FirebaseAuth auth;
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        auth = FirebaseAuth.getInstance();
-        FirebaseUser user = auth.getCurrentUser();
-        if (user!=null){
-            user.reload();
-        }
-    }
+//    @Override
+//    protected void onStart() {
+//        super.onStart();
+//        auth = FirebaseAuth.getInstance();
+//        FirebaseUser user = auth.getCurrentUser();
+//        if (user!=null){
+//            user.reload();
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
