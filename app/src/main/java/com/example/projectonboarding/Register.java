@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -76,7 +77,9 @@ public class Register extends AppCompatActivity {
                        public void onComplete(@NonNull Task<AuthResult> task) {
                            if (task.isSuccessful()){
                                 Toast.makeText(getApplicationContext(),"Pendaftaran Berhasil",Toast.LENGTH_SHORT).show();
-//                               FirebaseUser user = auth.getCurrentUser();
+                               FirebaseUser user = auth.getCurrentUser();
+                               UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
+                                       .setDisplayName(username).build();
                                 Intent sign = new Intent(getApplicationContext(),Profile.class);
                                 startActivity(sign);
                            }

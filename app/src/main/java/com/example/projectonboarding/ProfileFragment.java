@@ -1,12 +1,20 @@
 package com.example.projectonboarding;
 
+import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +31,9 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Button logout,logoutfix,batal;
+    private FirebaseAuth auth;
+    private TextView tvUser, tvEmailUser;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -53,12 +64,54 @@ public class ProfileFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
+        logout = rootView.findViewById(R.id.logout1);
+        auth = FirebaseAuth.getInstance();
+        FirebaseUser user= auth.getCurrentUser();
+        tvUser = rootView.findViewById(R.id.tv_namaUser);
+        tvEmailUser = rootView.findViewById(R.id.tv_emailUser);
+        tvUser.setText(user.getDisplayName());
+        tvEmailUser.setText(user.getEmail());
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                View popup = getLayoutInflater().inflate(R.layout.logout_popup,null);
+                Button btn_logoutfix = popup.findViewById(R.id.btn_logoutfix);
+                Button cancel = popup.findViewById(R.id.btn_batal);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setView(popup);
+                final AlertDialog alertDialog = builder.create();
+                alertDialog.show();
+                btn_logoutfix.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        auth.signOut();
+                        Intent back = new Intent(getActivity(),Login.class);
+                        startActivity(back);
+
+                    }
+                });
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                    }
+                });
+
+
+            }
+        });
+
+        return rootView;
     }
+
+
 }

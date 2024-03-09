@@ -1,16 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="86dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_profile"
+        app:layout_constraintBottom_toTopOf="@+id/imageView15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profile Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/tv_namaUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Siwa"
+        android:textColor="@color/white1"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView14" />
+
+    <TextView
+        android:id="@+id/tv_emailUser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/satoshi_regular"
+        android:text="siwa@gmail.com"
+        android:textColor="@color/white1"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView13"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_namaUser" />
+
+    <Button
+        android:id="@+id/btn_profile"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="379dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:includeFontPadding="false"
+        android:paddingRight="240dp"
+        android:text="Edit Profil"
+        android:textAllCaps="false"
+        android:textColor="@color/black1"
+        android:textSize="16sp"
+        app:icon="@drawable/ic_profilelogo"
+        app:iconTint="@color/black1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:strokeColor="@color/white1" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="141dp"
+        android:src="@drawable/garis"
+        app:layout_constraintBottom_toTopOf="@+id/imageView16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13" />
+
+    <Button
+        android:id="@+id/btn_notif"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:paddingRight="240dp"
+        android:text="Notifikasi"
+        android:textAllCaps="false"
+        android:textColor="@color/black1"
+        android:textSize="16sp"
+        app:icon="@drawable/ic_notif"
+        app:iconTint="@color/black1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15"
+        app:strokeColor="@color/white1" />
+
+    <Button
+        android:id="@+id/btn_refferal"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:paddingRight="200dp"
+        android:text="Kode Referral"
+        android:textAllCaps="false"
+        android:textColor="@color/black1"
+        android:textSize="16sp"
+        app:icon="@drawable/ic_notif"
+        app:iconTint="@color/black1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_notif"
+        app:strokeColor="@color/white1" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="14dp"
+        android:src="@drawable/garis"
+        app:layout_constraintBottom_toTopOf="@+id/btn_bantuan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15" />
+
+    <Button
+        android:id="@+id/btn_bantuan"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="189dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:paddingRight="240dp"
+        android:text="Bantuan"
+        android:textAllCaps="false"
+        android:textColor="@color/black1"
+        android:textSize="16sp"
+        app:icon="@drawable/ic_bantuan"
+        app:iconTint="@color/black1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16"
+        app:strokeColor="@color/white1" />
+
+    <Button
+        android:id="@+id/logout1"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="322dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Keluar"
+        android:textAllCaps="false"
+        android:textColor="@color/neutral"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_bantuan"
+        app:strokeColor="@color/neutral" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

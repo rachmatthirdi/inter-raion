@@ -11,4 +11,16 @@
                         4 digit kode ke email \nAnda.</string>
     <string name="kami">Kami telah mengirimkan pesan konfirmasi atur
                         \nulang kata sandi ke email Anda. Kembali lagi ke \naplikasi setelah konfirmasi.</string>
-</resources
+    <string-array name="pendidikan">
+        <item>SD</item>
+        <item>SMP</item>
+        <item>SMA</item>
+    </string-array>
+    <string-array name="domisili">
+        <item>Malang</item>
+        <item>Batu</item>
+        <item>Surabaya</item>
+    </string-array>
+    <string name="webclient">
+        547984089523-58s5d21k6tq7a4jv87a9himcjknbo4bu.apps.googleusercontent.com</string>
+</resources>

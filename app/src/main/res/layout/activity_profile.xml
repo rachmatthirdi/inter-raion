@@ -11,9 +11,9 @@
     <Spinner
         android:id="@+id/spn_domisili"
         android:layout_width="264dp"
-        android:layout_height="58dp"
+        android:layout_height="0dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="71dp"
         android:background="@drawable/spinnerstyle"
         app:layout_constraintBottom_toTopOf="@+id/btn_simpan"
@@ -23,36 +23,40 @@
 
     <TextView
         android:id="@+id/textView15"
-        android:layout_width="128dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
-        android:layout_marginBottom="246dp"
+        android:layout_marginStart="85dp"
+        android:layout_marginEnd="8dp"
         android:fontFamily="@font/satoshi_bold"
         android:text="Lengkapi"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/spn_pendididkan1"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
+        app:layout_constraintEnd_toStartOf="@+id/textView16"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="75dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="72dp"
+        android:layout_marginBottom="119dp"
         android:fontFamily="@font/satoshi_bold"
         android:text="Profilmu"
         android:textColor="@color/primary500"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView11"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView15"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
         android:id="@+id/spn_pendididkan1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="25dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="14dp"
         android:background="@drawable/spinnerstyle"
         app:layout_constraintBottom_toTopOf="@+id/textView18"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,11 +77,10 @@
         android:id="@+id/imageView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="241dp"
-        android:layout_marginBottom="56dp"
+        android:layout_marginBottom="57dp"
         app:layout_constraintBottom_toTopOf="@+id/textView17"
         app:layout_constraintEnd_toEndOf="@+id/imageView11"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
         app:srcCompat="@drawable/ic_profilechange" />
 
     <TextView
@@ -85,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="14dp"
         android:fontFamily="@font/satoshi_bold"
         android:text="Tingkat Pendidikan"
         app:layout_constraintBottom_toTopOf="@+id/spn_pendididkan1"
@@ -97,10 +100,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
-        android:layout_marginBottom="149dp"
+        android:layout_marginBottom="21dp"
         android:fontFamily="@font/satoshi_bold"
         android:text="Domisili"
-        app:layout_constraintBottom_toTopOf="@+id/btn_simpan"
+        app:layout_constraintBottom_toTopOf="@+id/spn_domisili"
         app:layout_constraintStart_toStartOf="@+id/spn_pendididkan1"
         app:layout_constraintTop_toBottomOf="@+id/spn_pendididkan1" />
 
@@ -108,16 +111,11 @@
         android:id="@+id/frameLayout"
         android:layout_width="76dp"
         android:layout_height="58dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="69dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="32dp"
         android:background="@drawable/bg_lokasi"
-        app:layout_constraintBottom_toTopOf="@+id/btn_simpan"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/spn_domisili"
-        app:layout_constraintTop_toBottomOf="@+id/spn_pendididkan1"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/spn_pendididkan1">
 
     </FrameLayout>
 
@@ -128,7 +126,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
-        android:layout_marginBottom="80dp"
+        android:layout_marginBottom="81dp"
         android:backgroundTint="@color/primary"
         android:fontFamily="@font/satoshi_bold"
         android:text="Simpan"
@@ -137,7 +135,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+        app:layout_constraintTop_toBottomOf="@+id/spn_domisili" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
