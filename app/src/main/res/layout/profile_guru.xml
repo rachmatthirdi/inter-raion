@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="650dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="Profil"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:textSize="25sp"
+                    android:gravity="center_horizontal"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/gambar_guru_besar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/imguru_besar1"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/rating_guru"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/layout_rating_guru"
+                        android:text="4.5"
+                        android:fontFamily="@font/satoshi_bold"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/gambar_guru_besar" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/textNamaGuruProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="2dp"
+                    android:text="@string/nama_guru"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:textSize="21sp"
+                    android:gravity="center_horizontal"/>
+                <TextView
+                    android:id="@+id/textMapelGuruProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mata_pelajaran"
+                    android:padding="2dp"
+                    android:fontFamily="@font/satoshi_medium"
+                    android:textSize="15sp"
+                    android:textColor="@color/gray"
+                    android:gravity="center_horizontal"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/box_profile_guru"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/rectangleProfilGuru"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/rectangle_profile_guru"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.494"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/tesediaUntuk"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/satoshi_regular"
+                        android:text="Tersedia untuk"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toStartOf="@+id/rectangleProfilGuru"
+                        app:layout_constraintTop_toTopOf="@id/rectangleProfilGuru" />
+
+                    <TextView
+                        android:id="@+id/textGolongan1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:background="@drawable/rounded_background_golongan_profile_guru"
+                        android:fontFamily="@font/satoshi_medium"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="2dp"
+                        android:text="SD Kelas 4-6"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/rectangleProfilGuru"
+                        app:layout_constraintTop_toBottomOf="@+id/tesediaUntuk"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <TextView
+                        android:id="@+id/textGolongan2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginBottom="24dp"
+                        android:background="@drawable/rounded_background_golongan_profile_guru"
+                        android:fontFamily="@font/satoshi_medium"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="2dp"
+                        android:text="SMP"
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/textGolongan1"
+                        app:layout_constraintTop_toBottomOf="@+id/tesediaUntuk" />
+
+                    <ImageView
+                        android:id="@+id/LineProfilGuru"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="68dp"
+                        android:paddingVertical="12dp"
+                        android:src="@drawable/line_profile_guru"
+                        app:layout_constraintBottom_toBottomOf="rectangleProfilGuru"
+                        app:layout_constraintStart_toStartOf="@id/textGolongan2"
+                        app:layout_constraintTop_toTopOf="rectangleProfilGuru" />
+
+                    <TextView
+                        android:id="@+id/textGabung"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/satoshi_regular"
+                        android:text="Bergabung"
+                        android:textColor="@color/white"
+                        app:layout_constraintStart_toStartOf="@+id/LineProfilGuru"
+                        app:layout_constraintTop_toTopOf="@id/rectangleProfilGuru" />
+
+                    <TextView
+                        android:id="@+id/textTahun"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginBottom="24dp"
+                        android:fontFamily="@font/satoshi_bold"
+                        android:paddingHorizontal="6dp"
+                        android:paddingVertical="2dp"
+                        android:text="2023"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/LineProfilGuru"
+                        app:layout_constraintTop_toBottomOf="@+id/textGabung" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:id="@+id/bar_hubungi_pesan_guru"
+            android:layout_marginTop="20dp">
+
+            <ImageButton
+                android:id="@+id/buttonMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/image_button_profile_guru"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:contentDescription="@string/app_name"
+                android:background="@android:color/transparent"/>
+            <ImageButton
+                android:id="@+id/buttonContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_marginStart="20dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/hubungi_button_profile_guru" />
+    </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

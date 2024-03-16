@@ -3,13 +3,10 @@ package com.example.projectonboarding;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -50,5 +47,26 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //ini juga unutk  rekomendasi guru
+
+        // Tampilkan BerandaFragment saat Activity dimulai
+        if (savedInstanceState == null) {
+            getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.fragment_container, new BerandaFragment())
+                    .commit();
+        }
+
+    }
+
+    // ini untuk rekomendasi guru
+
+
+    // Metode untuk berpindah ke CariFragment
+    public void goToCariFragment() {
+        CariFragment cariFragment = new CariFragment(); // Buat instance CariFragment
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment_container, cariFragment); // Ganti Fragment saat ini dengan CariFragment
+        transaction.addToBackStack(null); // Tambahkan transaksi ke back stack
+        transaction.commit(); // Lakukan transaksi
     }
 }

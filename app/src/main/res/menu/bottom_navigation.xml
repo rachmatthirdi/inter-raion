@@ -3,19 +3,22 @@
     <item
         android:id="@+id/nav_beranda"
         android:icon="@drawable/beranda"
-        android:title="--"/>
+        android:title=""/>
+
+    <item
+
+        android:id="@+id/nav_cari"
+        android:icon="@drawable/cari"
+        android:title=""/>
 
     <item
         android:id="@+id/nav_berita"
         android:icon="@drawable/news"
-        android:title="--" />
+        android:title=""/>
 
     <item
         android:id="@+id/nav_profile"
         android:icon="@drawable/profil"
-        android:title="--"/>
-    <item
-        android:id="@+id/nav_cari"
-        android:icon="@drawable/cari"
-        android:title="--"/>
+        android:title=""/>
+
 </menu>
