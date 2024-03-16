@@ -1,16 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/white1"
     android:layout_height="match_parent"
     tools:context=".CariFragment">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/imageView19"
+        android:layout_width="410dp"
+        android:layout_height="180dp"
+        android:layout_marginEnd="1dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
+        android:id="@+id/textView24"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Cari Fragment"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Rekomendasi"
+        android:textColor="@color/white1"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/textView25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/satoshi_regular"
+        android:text="Rekomendasi guru untukmu"
+        android:textColor="@color/white1"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+    <Button
+        android:id="@+id/button6"
+        style="@style/Widget.Material3.Button.TextButton.Icon"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="@color/primary500"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Cari Gurumu"
+        android:textColor="@color/white1"
+        app:icon="@drawable/ic_search"
+        app:iconTint="@color/white1"
+        app:layout_constraintEnd_toStartOf="@+id/button7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <Button
+        android:id="@+id/button7"
+        style="@style/Widget.Material3.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/primary500"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Filter"
+        android:textColor="@color/white1"
+        app:icon="@drawable/ic_filter"
+        app:iconTint="@color/white1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvGuru"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button6"
+        app:layout_constraintVertical_bias="0.056" />
+    <!--        app:layout_constraintVertical_weight="1" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

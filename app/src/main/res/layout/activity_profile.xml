@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white1"
     tools:context=".Profile">
 
 
@@ -12,11 +13,11 @@
         android:id="@+id/spn_domisili"
         android:layout_width="264dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="36dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="71dp"
         android:background="@drawable/spinnerstyle"
-        app:layout_constraintBottom_toTopOf="@+id/btn_simpan"
+        app:layout_constraintBottom_toTopOf="@+id/btnEditSimpan"
         app:layout_constraintEnd_toStartOf="@+id/frameLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView18" />
@@ -25,14 +26,17 @@
         android:id="@+id/textView15"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="85dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="82dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="27dp"
         android:fontFamily="@font/satoshi_bold"
         android:text="Lengkapi"
         android:textSize="30sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
+        app:layout_constraintBottom_toTopOf="@+id/imageView11"
         app:layout_constraintEnd_toStartOf="@+id/textView16"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView16"
@@ -111,16 +115,18 @@
         android:id="@+id/frameLayout"
         android:layout_width="76dp"
         android:layout_height="58dp"
+        android:layout_marginStart="7dp"
         android:layout_marginTop="52dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/bg_lokasi"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spn_domisili"
         app:layout_constraintTop_toBottomOf="@+id/spn_pendididkan1">
 
     </FrameLayout>
 
     <Button
-        android:id="@+id/btn_simpan"
+        android:id="@+id/btnEditSimpan"
         style="@style/Widget.MaterialComponents.Button.TextButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

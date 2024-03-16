@@ -51,7 +51,7 @@ public class Register extends AppCompatActivity {
         arrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent keLogin = new Intent (getApplicationContext(), Profile.class);
+                Intent keLogin = new Intent (getApplicationContext(), Login.class);
                 startActivity(keLogin);
             }
         });
@@ -80,6 +80,7 @@ public class Register extends AppCompatActivity {
                                FirebaseUser user = auth.getCurrentUser();
                                UserProfileChangeRequest profileUpdate = new UserProfileChangeRequest.Builder()
                                        .setDisplayName(username).build();
+                               user.updateProfile(profileUpdate);
                                 Intent sign = new Intent(getApplicationContext(),Profile.class);
                                 startActivity(sign);
                            }

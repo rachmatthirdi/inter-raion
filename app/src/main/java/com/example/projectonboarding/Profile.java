@@ -8,7 +8,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Profile extends AppCompatActivity {
@@ -23,7 +22,7 @@ private Button simpan;
         spnDomisili = findViewById(R.id.spn_domisili);
         pendidikan = getResources().getStringArray(R.array.pendidikan);
         domisili = getResources().getStringArray(R.array.domisili);
-        simpan = findViewById(R.id.btn_simpan);
+        simpan = findViewById(R.id.btnEditSimpan);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.pendidikan
         , android.R.layout.simple_spinner_item);
@@ -43,7 +42,7 @@ private Button simpan;
         ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,R.array.domisili
         , android.R.layout.simple_spinner_item);
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spnDomisili.setAdapter(adapter);
+        spnDomisili.setAdapter(adapter2);
         spnDomisili.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

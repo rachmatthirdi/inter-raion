@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="10dp"
+    app:cardBackgroundColor="@color/white1"
+    app:cardElevation="0dp"
+    android:id="@+id/berita_1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:elevation="3dp"
+            android:src="@drawable/news_1" />
+
+        <TextView
+            android:id="@+id/tvJudul"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:paddingLeft="1.1in"
+            android:text="Strategi Lulus Sekolah Impian Dengan Mudah"
+            android:textColor="@color/black1"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/satoshi_regular"
+            android:paddingLeft="1.1in"
+            android:text='20 Januari 2024' />
+
+        <TextView
+            android:id="@+id/tvAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:fontFamily="@font/satoshi_regular"
+            android:paddingLeft="1.1in"
+            android:text="Reza Kumal | 2 menit baca" />
+    </androidx.cardview.widget.CardView>

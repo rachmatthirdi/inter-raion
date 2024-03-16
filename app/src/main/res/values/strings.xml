@@ -20,7 +20,16 @@
         <item>Malang</item>
         <item>Batu</item>
         <item>Surabaya</item>
+        <item>Jakarta</item>
+        <item>Yogyakarta</item>
+        <item>Bandung</item>
     </string-array>
     <string name="webclient">
         547984089523-58s5d21k6tq7a4jv87a9himcjknbo4bu.apps.googleusercontent.com</string>
+    <string name="berita_1">Kami memahami betapa pentingnya impian Anda untuk lulus dari sekolah impian,
+        dan itulah mengapa kami telah merangkum beberapa strategi yang dapat membantu Anda mencapai tujuan tersebut. \n\n1. Kenali Tujuan Pendidikan Anda Sebelum memulai perjalanan menuju sekolah impian, penting untuk mengenali tujuan pendidikan Anda. Apakah Anda bermimpi menjadi ahli di bidang tertentu atau ingin berkontribusi pada masyarakat? Dengan menetapkan tujuan yang jelas, Anda akan memiliki landasan yang kuat untuk merancang strategi pendidikan Anda. \n\n2. Rencanakan dengan Matang Buat rencana pendidikan yang terperinci, termasuk jadwal studi, target nilai, dan proyek-proyek khusus. Dengan memiliki rencana yang matang, Anda dapat mengelola waktu dan sumber daya dengan lebih efisien, meningkatkan peluang untuk meraih kesuksesan akademis. \n\n3. Jalin Hubungan dengan Guru Berinteraksi dengan dosen dan mentor adalah kunci untuk sukses di dunia pendidikan. Mereka dapat memberikan pandangan yang berharga, membimbing Anda dalam pemahaman materi, dan membantu Anda menjembatani kesenjangan dalam pemahaman akademis.</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

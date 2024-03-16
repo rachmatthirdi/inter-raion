@@ -31,7 +31,7 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private Button logout,logoutfix,batal;
+    private Button logout,logoutfix,batal,btnEditProfile;
     private FirebaseAuth auth;
     private TextView tvUser, tvEmailUser;
 
@@ -78,6 +78,14 @@ public class ProfileFragment extends Fragment {
         tvEmailUser = rootView.findViewById(R.id.tv_emailUser);
         tvUser.setText(user.getDisplayName());
         tvEmailUser.setText(user.getEmail());
+        btnEditProfile = rootView.findViewById(R.id.btn_profile);
+        btnEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent update = new Intent(getContext(), EditProfile.class);
+                startActivity(update);
+            }
+        });
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,19 +1,45 @@
 package com.example.projectonboarding;
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.navigation.fragment.NavHostFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link BeritaFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BeritaFragment extends Fragment {
+public class BeritaFragment extends Fragment implements MyAdapter.OnItemClickListener {
+    RecyclerView recyclerView;
+    ArrayList<dbBerita> dbBeritaArrayList;
+    MyAdapter myAdapter;
+    FirebaseFirestore db;
+    ProgressDialog progressDialog;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -23,6 +49,7 @@ public class BeritaFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private CardView berita1;
 
     public BeritaFragment() {
         // Required empty public constructor
@@ -58,7 +85,71 @@ public class BeritaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_berita, container, false);
+       View view = inflater.inflate(R.layout.fragment_berita,container,false);
+
+        progressDialog = new ProgressDialog(getContext());
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Mengambil data");
+        progressDialog.show();
+       recyclerView = view.findViewById(R.id.rv_berita);
+       recyclerView.setHasFixedSize(true);
+       recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+       db = FirebaseFirestore.getInstance();
+       dbBeritaArrayList = new ArrayList<dbBerita>();
+       myAdapter = new MyAdapter(getContext(),dbBeritaArrayList,this);
+        recyclerView.setAdapter(myAdapter);
+        EventChangeListener();
+
+
+
+
+
+       return view;
+    }
+        private void EventChangeListener(){
+            db.collection("berita").orderBy("judul", Query.Direction.ASCENDING).
+                    addSnapshotListener(new EventListener<QuerySnapshot>() {
+                @Override
+                public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                    if (error!=null){
+                        if (progressDialog.isShowing()){
+                            progressDialog.dismiss();
+                        }
+                        Log.e("Firestore error",error.getMessage());
+                        return;
+                    }
+                    for (DocumentChange dc : value.getDocumentChanges()){
+                        if (dc.getType()== DocumentChange.Type.ADDED){
+                            dbBeritaArrayList.add(dc.getDocument().toObject(dbBerita.class));
+                        }
+                        if (progressDialog.isShowing()){
+                            progressDialog.dismiss();
+                        }
+                        myAdapter.notifyDataSetChanged();
+
+                    }
+
+                }
+            });
+        }
+
+    @Override
+    public void onItemClick(int position) {
+        dbBerita berita = dbBeritaArrayList.get(position);
+        String judul = berita.getJudul();
+        String tanggal = berita.getTanggal();
+        String author = berita.getAuthor();
+        FragmentManager fragmentManager = getParentFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        BeritaFragmentDetail detailFragment = new BeritaFragmentDetail();
+        Bundle bundle = new Bundle();
+        bundle.putString("judul_berita", judul);
+        bundle.putString("tanggal_berita", tanggal);
+        bundle.putString("author_berita", author);
+        detailFragment.setArguments(bundle);
+        transaction.replace(R.id.FragmentBerita, detailFragment);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
 }

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white1"
+    tools:context=".EditProfile">
+
+    <Spinner
+        android:id="@+id/spn_domisili"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="14dp"
+        android:background="@drawable/spinnerstyle"
+        app:layout_constraintBottom_toBottomOf="@+id/frameLayout"
+        app:layout_constraintEnd_toStartOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/frameLayout" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="100dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Edit"
+        android:textSize="30sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="41dp"
+        android:layout_marginBottom="118dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Profilmu"
+        android:textColor="@color/primary500"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.574"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/spn_pendididkan1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="17dp"
+        android:background="@drawable/spinnerstyle"
+        app:layout_constraintBottom_toTopOf="@+id/textView18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="9dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView12"
+        app:layout_constraintStart_toStartOf="@+id/textView15"
+        app:srcCompat="@drawable/ic_profile" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView21"
+        app:layout_constraintEnd_toEndOf="@+id/imageView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView16"
+        app:srcCompat="@drawable/ic_profilechange" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Tingkat Pendidikan"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/spn_pendididkan1"
+        app:layout_constraintStart_toStartOf="@+id/spn_pendididkan1"
+        app:layout_constraintTop_toBottomOf="@+id/etEditTelepon" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Domisili"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="@+id/spn_domisili"
+        app:layout_constraintTop_toBottomOf="@+id/spn_pendididkan1" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="70dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="42dp"
+        android:background="@drawable/bg_lokasi"
+        app:layout_constraintBottom_toTopOf="@+id/btnEditSimpan"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/spn_domisili"
+        app:layout_constraintTop_toBottomOf="@+id/textView18">
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/btnEditSimpan"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="39dp"
+        android:backgroundTint="@color/primary"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Simpan"
+        android:textAllCaps="false"
+        android:textColor="@color/white1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
+    <EditText
+        android:id="@+id/etEditNama"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/editextborder"
+        android:ems="10"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/textView22"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginBottom="12dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Nama"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/etEditNama"
+        app:layout_constraintStart_toStartOf="@+id/etEditNama"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+
+    <EditText
+        android:id="@+id/etEditTelepon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="18dp"
+        android:background="@drawable/editextborder"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/textView17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="E-mail"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/etEditTelepon"
+        app:layout_constraintStart_toStartOf="@+id/etEditTelepon"
+        app:layout_constraintTop_toBottomOf="@+id/etEditNama" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
