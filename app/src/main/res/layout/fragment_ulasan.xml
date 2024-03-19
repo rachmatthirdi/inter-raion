@@ -50,7 +50,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/satoshi_regular"
                         android:text="10 Mar 2024"
-                        android:textColor="@color/neutral2"
+                        android:textColor="@color/neutral"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -137,7 +137,7 @@
                     android:id="@+id/imageviewulasan2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/foto_ulasan2"
+                    android:src="@drawable/ellipse_kuning"
                     android:paddingHorizontal="10dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -182,7 +182,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/satoshi_regular"
                         android:text="12 Feb 2024"
-                        android:textColor="@color/neutral2"
+                        android:textColor="@color/neutral"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -263,7 +263,7 @@
                     android:id="@+id/imageviewulasan3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/foto_ulasan2"
+                    android:src="@drawable/ellipse_kuning"
                     android:paddingHorizontal="10dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -308,7 +308,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/satoshi_regular"
                         android:text="12 Feb 2024"
-                        android:textColor="@color/neutral2"
+                        android:textColor="@color/neutral"
                         android:textSize="14sp" />
                 </LinearLayout>
 
@@ -389,7 +389,7 @@
                     android:id="@+id/imageviewulasan4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/foto_ulasan4"
+                    android:src="@drawable/ellipse_hijau"
                     android:paddingHorizontal="10dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -434,7 +434,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/satoshi_regular"
                         android:text="8 Jan 2024"
-                        android:textColor="@color/neutral2"
+                        android:textColor="@color/neutral"
                         android:textSize="14sp" />
                 </LinearLayout>
 

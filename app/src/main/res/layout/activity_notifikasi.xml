@@ -34,7 +34,7 @@
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/rectangle_notif_beranda_atas" />
+                    app:srcCompat="@drawable/rectangle_biru_atas" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                         android:background="@android:color/transparent"
                         android:padding="20dp"
                         android:layout_gravity="start"
-                        app:srcCompat="@drawable/vector_back_putih" />
+                        app:srcCompat="@drawable/back_white" />
 
                     <TextView
                         android:id="@+id/textView24"
@@ -79,14 +79,14 @@
                     android:id="@+id/imageKataSandi"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/vector_kata_sandi"
+                    android:src="@drawable/vector_sandi"
                     android:layout_marginEnd="10dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginEnd="55dp">
+                    android:layout_marginEnd="5dp"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -98,7 +98,7 @@
                         android:textSize="16sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="220dp"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/satoshi_regular"
                         android:text="Kata sandi berhasil diganti."
@@ -112,17 +112,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/satoshi_bold"
+                    android:gravity="center_vertical"
                     android:text="9:00"
                     android:textColor="@color/neutral"
-                    android:layout_marginStart="10dp"
-                    android:textSize="14sp"
-                    android:gravity="center_vertical"/>
+                    android:textSize="14sp" />
 
             </LinearLayout>
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/line_notifikasi"
+                android:src="@drawable/line"
                 android:gravity="center_horizontal"/>
 
             <LinearLayout
@@ -143,7 +142,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginEnd="7dp">
+                    android:layout_marginEnd="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -155,7 +154,7 @@
                         android:textSize="16sp" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="220dp"
                         android:layout_height="match_parent"
                         android:fontFamily="@font/satoshi_regular"
                         android:text="Siwa, apakah bisa ikut kelas besok?"
@@ -171,7 +170,6 @@
                     android:fontFamily="@font/satoshi_bold"
                     android:text="28/3"
                     android:textColor="@color/neutral"
-                    android:layout_marginStart="2dp"
                     android:textSize="14sp"
                     android:gravity="center_vertical"/>
 
@@ -179,7 +177,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/line_notifikasi"
+                android:src="@drawable/line"
                 android:gravity="center_horizontal"/>
 
             <LinearLayout
@@ -193,14 +191,14 @@
                     android:id="@+id/imagePembayaranBerhasil"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/vector_pembayaran"
+                    android:src="@drawable/vector_pembayara"
                     android:layout_marginEnd="10dp"/>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginEnd="10dp">
+                    android:layout_marginEnd="5dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -212,7 +210,7 @@
                         android:textSize="16sp" />
 
                     <TextView
-                        android:layout_width="210dp"
+                        android:layout_width="220dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/satoshi_regular"
                         android:text="Anda telah memesan jadwal dengan Rahmawati Kusuma."
@@ -228,7 +226,6 @@
                     android:fontFamily="@font/satoshi_bold"
                     android:text="9:00"
                     android:textColor="@color/neutral"
-                    android:layout_marginStart="10dp"
                     android:textSize="14sp"
                     android:gravity="center_vertical"/>
 

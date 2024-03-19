@@ -125,8 +125,9 @@ public class BerandaFragment extends Fragment {
 
 
     //untuk button notif
+    // harus ganti ke ActivityNotifikasi
     private void pindahKeHalamanNotifikasi() {
-        Intent intent = new Intent(getActivity(), ActivityNotifikasi.class);
+        Intent intent = new Intent(getActivity(), ActivityProfileGuru.class);
         startActivity(intent);
     }
 

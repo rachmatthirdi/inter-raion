@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //ini juga unutk  rekomendasi guru
 
         // Tampilkan BerandaFragment saat Activity dimulai
         if (savedInstanceState == null) {
