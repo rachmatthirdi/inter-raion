@@ -60,4 +60,15 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cari_guru">Cari guru terbaikmu</string>
+    <string name="cari_atau">Cari atau pilih dari berbagai tingkat pendidikan</string>
+    <string name="nama_siswa">Siswa!</string>
+    <string name="nama_guru">Rahmawati K</string>
+    <string name="mata_pelajaran">Matematika</string>
+    <string name="hari">Senin, 13.00-14.00</string>
+    <string name="waktu">1 Jam</string>
+    <string name="rekomendasi_guru">Rekomendasi Guru</string>
+    <string name="Populer_berita">Populer Berita</string>
+    <string name="info_guru">Hai! Saya seorang guru yang penuh semangat, khususnya dalam matematika. Saya fokus membantu siswa memahami konsep matematika dengan cara yang menyenangkan dan interaktif. Pengalaman mengajar saya mencakup tingkat sekolah menengah. Saya percaya setiap siswa memiliki potensi unik, dan saya berusaha menciptakan lingkungan inklusif di kelas.</string>
+    <string name="ulasan_rahma">Ibu Rahma sangat passionate dalam mengajar. Hal tersebut membuat saya mudah memahami apa yang dijelaskan olehnya.</string>
 </resources>

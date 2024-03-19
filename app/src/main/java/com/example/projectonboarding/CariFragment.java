@@ -196,4 +196,6 @@ public class CariFragment extends Fragment implements guruAdapter.OnItemClickLis
         dbGuruArrayList.addAll(dbGuruArrayListCopy);
         guruAdapter.notifyDataSetChanged();
     }
+
 }
+

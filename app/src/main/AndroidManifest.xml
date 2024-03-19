@@ -74,8 +74,9 @@
         </activity>
         <activity android:name=".Activity2" />
         <activity android:name=".Activity3" />
-        <activity android:name=".Activity4" />
         <activity android:name=".Activity5" />
+        <activity android:name=".ActivityProfileGuru" />
+        <activity android:name=".ActivityNotifikasi" />
     </application>
 
 </manifest>

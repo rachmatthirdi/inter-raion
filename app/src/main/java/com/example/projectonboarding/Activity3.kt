@@ -13,7 +13,7 @@ class Activity3: AppCompatActivity() {
 
         btnLanjutkan = findViewById(R.id.button2)
         btnLanjutkan?.setOnClickListener {
-            startActivity(Intent(this@Activity3, Activity4::class.java))
+            startActivity(Intent(this@Activity3, Activity5::class.java))
         }
 
     }
