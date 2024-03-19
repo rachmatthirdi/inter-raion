@@ -45,22 +45,28 @@ public class EditProfile extends AppCompatActivity {
         btnSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
-                        .setDisplayName(etNama.toString()).build();
-                user.updateProfile(profileChangeRequest)
-                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
+                String username = etNama.getText().toString();
+                String email = etTelepon.getText().toString();
+                if (username.isEmpty() || email.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Ada yang masih kosong", Toast.LENGTH_SHORT).show();
+                } else {
+                    UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
+                            .setDisplayName(etNama.toString()).build();
+                    user.updateProfile(profileChangeRequest)
+                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
 
-                                    }
-                                });
-                user.verifyBeforeUpdateEmail(etTelepon.toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        Toast.makeText(getApplicationContext(),"E-mail berhasil di update",Toast.LENGTH_SHORT).show();
-                        finish();
-                    }
-                });
+                                }
+                            });
+                    user.verifyBeforeUpdateEmail(etTelepon.toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            Toast.makeText(getApplicationContext(), "Username dan E-mail berhasil di update", Toast.LENGTH_SHORT).show();
+                            finish();
+                        }
+                    });
+                }
             }
         });
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.pendidikan

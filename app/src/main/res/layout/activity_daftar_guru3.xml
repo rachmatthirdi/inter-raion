@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollView2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:scrollbars="vertical"
+    android:fillViewport="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white1"
+        tools:context=".DaftarGuru3">
+
+        <ImageView
+            android:id="@+id/imageView28"
+            android:layout_width="407dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/vc_bgatas" />
+
+        <TextView
+            android:id="@+id/textView41"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/satoshi_bold"
+            android:text="Daftar Menjadi Guru"
+            android:textColor="@color/white1"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView28"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageButton"
+            android:layout_width="32dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@color/secondary500"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView28"
+            app:layout_constraintEnd_toStartOf="@+id/textView41"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/vc_back" />
+
+        <Button
+            android:id="@+id/button13"
+            style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Isi Profil"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:icon="@drawable/vc_angka3"
+            app:iconTint="@color/white1"
+            app:iconTintMode="multiply"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView28" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/button13">
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Informasi"
+                android:textColor="@color/black1"
+                android:textSize="18sp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="204dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Deskripsi"
+                android:textColor="@color/black1"
+                android:textSize="20sp" />
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="200dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/editextborder" />
+
+            <ImageView
+                android:layout_width="350dp"
+                android:layout_height="3dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/garis" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Sertifikasi"
+                android:textColor="@color/black1"
+                android:textSize="20sp" />
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/editextborder" />
+
+            <Button
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Unggah Sertifikat"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/black1"
+                android:textSize="18sp"
+                app:icon="@drawable/vc_upload"
+                app:iconGravity="end"
+                app:iconTint="@color/primary500"
+                app:strokeColor="@color/black1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Pengalaman"
+                android:textColor="@color/black1"
+                android:textSize="20sp" />
+
+            <EditText
+                android:layout_width="350dp"
+                android:layout_height="100dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/editextborder" />
+            <Button
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Unggah Bukti Pengalaman"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/black1"
+                android:textSize="18sp"
+                app:icon="@drawable/vc_upload"
+                app:iconGravity="end"
+                app:iconTint="@color/primary500"
+                app:strokeColor="@color/black1"/>
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:text="Selanjutnya"
+                android:fontFamily="@font/satoshi_bold"
+                android:textAllCaps="false"
+                android:textColor="@color/white1"
+                android:backgroundTint="@color/primary500"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

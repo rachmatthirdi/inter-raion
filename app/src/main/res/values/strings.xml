@@ -16,6 +16,17 @@
         <item>SMP</item>
         <item>SMA</item>
     </string-array>
+    <string name="faqbayar">\n
+1. Buka Menu Cari\n
+2. Pilih, cari, atau filter guru yang diinginkan\n
+3. Lihat profil guru\n
+4. Jika sesuai, maka hubungi guru melalui tombol "Hubungi Sekarang"\n
+5. Berbincang dengan guru terkait harga dan jadwal\n
+6. Jika sudah mencapai kesepakatan, maka pesan guru melalui tombol "Pesan".\n
+7. Pilih jadwal yang diinginkan\n
+8. Pilih metode pembayaran\n
+9. Tunggu guru anda mengkonfirmasi pembayaran\n
+10. Selamat! Anda sudah memesan guru \tdengan jadwal yang anda inginkan. Anda dapat \tmenghubungi guru kembali melalui fitur Chat di \tmenu Cari.</string>
     <string-array name="domisili">
         <item>Malang</item>
         <item>Batu</item>
@@ -23,6 +34,23 @@
         <item>Jakarta</item>
         <item>Yogyakarta</item>
         <item>Bandung</item>
+    </string-array>
+    <string-array name="jenjang">
+        <item>SD Kelas 1 - 3</item>
+        <item>SD Kelas 4 - 6</item>
+        <item>SMP</item>
+        <item>SMA</item>
+    </string-array>
+    <string-array name="matpel">
+        <item>Matematika</item>
+        <item>Biologi</item>
+        <item>Bahasa Indonesia</item>
+        <item>Sosiologi</item>
+        <item>Lainnya</item>
+    </string-array>
+    <string-array name="mengajar">
+        <item>Ya</item>
+        <item>Tidak</item>
     </string-array>
     <string name="webclient">
         547984089523-58s5d21k6tq7a4jv87a9himcjknbo4bu.apps.googleusercontent.com</string>

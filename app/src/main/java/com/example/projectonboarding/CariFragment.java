@@ -1,5 +1,7 @@
 package com.example.projectonboarding;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -10,6 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.Spinner;
 
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
@@ -27,7 +33,9 @@ import java.util.ArrayList;
  */
 public class CariFragment extends Fragment implements guruAdapter.OnItemClickListener{
     RecyclerView recyclerView;
+    Button filter;
     ArrayList<dbGuru> dbGuruArrayList;
+    private ArrayList<dbGuru> dbGuruArrayListCopy;
     guruAdapter guruAdapter;
     FirebaseFirestore db;
 
@@ -75,6 +83,7 @@ public class CariFragment extends Fragment implements guruAdapter.OnItemClickLis
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.fragment_cari,container,false);
+       filter = view.findViewById(R.id.btnFilter);
        recyclerView = view.findViewById(R.id.rvGuru);
        recyclerView.setHasFixedSize(true);
        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
@@ -83,6 +92,15 @@ public class CariFragment extends Fragment implements guruAdapter.OnItemClickLis
       guruAdapter = new guruAdapter(getContext(),dbGuruArrayList,this);
       recyclerView.setAdapter(guruAdapter);
         OnEventChangeListener();
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!dbGuruArrayList.equals(dbGuruArrayListCopy)){
+                    resetGuru();
+                }
+                showFilter();
+            }
+        });
        return view;
     }
     private void OnEventChangeListener(){
@@ -96,6 +114,7 @@ public class CariFragment extends Fragment implements guruAdapter.OnItemClickLis
                             }
                             guruAdapter.notifyDataSetChanged();
                         }
+                        dbGuruArrayListCopy = new ArrayList<>(dbGuruArrayList);
 
                     }
                 });
@@ -104,5 +123,77 @@ public class CariFragment extends Fragment implements guruAdapter.OnItemClickLis
     @Override
     public void onItemClick(int position) {
 
+    }
+    private void showFilter(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+        View view = getLayoutInflater().inflate(R.layout.filter_guru,null);
+        Spinner spnJenjang = view.findViewById(R.id.spnJenjang);
+        Spinner spnMatpel = view.findViewById(R.id.spnMatpel);
+        Button batal = view.findViewById(R.id.button7);
+        Button simpan = view.findViewById(R.id.button8);
+        ArrayAdapter<CharSequence> jenjangAdapter = ArrayAdapter.createFromResource(getContext(),R.array.jenjang, android.R.layout.simple_spinner_item);
+        jenjangAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnJenjang.setAdapter(jenjangAdapter);
+        ArrayAdapter<CharSequence> matpelAdapter = ArrayAdapter.createFromResource(getContext(),R.array.matpel, android.R.layout.simple_spinner_item);
+        jenjangAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spnMatpel.setAdapter(matpelAdapter);
+        builder.setView(view);
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+        final String[] matpel = {""};
+        final String[] jenjang = {""};
+        spnJenjang.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                jenjang[0] = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        spnMatpel.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                matpel[0] = parent.getItemAtPosition(position).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+        simpan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filterRecyclerView(matpel[0],jenjang[0] );
+                alertDialog.dismiss();
+            }
+        });
+        batal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                resetGuru();
+                alertDialog.dismiss();
+            }
+        });
+    }
+    private void filterRecyclerView(String selectedMatpel, String selectedJenjang) {
+        ArrayList<dbGuru> filteredList = new ArrayList<>();
+        for (dbGuru guru : dbGuruArrayList) {
+            if (guru.getMatpel().equals(selectedMatpel) && (guru.getJenjang1().equals(selectedJenjang) || guru.getJenjang2().equals(selectedJenjang))) {
+                filteredList.add(guru);
+            }
+        }
+
+        dbGuruArrayList.clear();
+        dbGuruArrayList.addAll(filteredList);
+        guruAdapter.notifyDataSetChanged();
+    }
+    private void resetGuru(){
+        dbGuruArrayList.clear();
+        dbGuruArrayList.addAll(dbGuruArrayListCopy);
+        guruAdapter.notifyDataSetChanged();
     }
 }

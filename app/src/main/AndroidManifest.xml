@@ -13,6 +13,33 @@
         android:theme="@style/Theme.AppLogin"
         tools:targetApi="31">
         <activity
+            android:name=".DaftarGuruEnd"
+            android:exported="false" />
+        <activity
+            android:name=".DaftarGuru4"
+            android:exported="false" />
+        <activity
+            android:name=".TestScroll"
+            android:exported="false" />
+        <activity
+            android:name=".DaftarGuru3"
+            android:exported="false" />
+        <activity
+            android:name=".RiwayatPembayaran"
+            android:exported="false" />
+        <activity
+            android:name=".FaqPesan"
+            android:exported="false" />
+        <activity
+            android:name=".FAQ"
+            android:exported="false" />
+        <activity
+            android:name=".DaftarGuru2"
+            android:exported="false" />
+        <activity
+            android:name=".DaftarGuru"
+            android:exported="false" />
+        <activity
             android:name=".EditProfile"
             android:exported="false" />
         <activity

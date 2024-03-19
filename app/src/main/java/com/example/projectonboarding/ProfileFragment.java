@@ -31,7 +31,7 @@ public class ProfileFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    private Button logout,logoutfix,batal,btnEditProfile;
+    private Button logout,logoutfix,batal,btnEditProfile,btnDaftarGuru,btnBantuan,btnRiwayat;
     private FirebaseAuth auth;
     private TextView tvUser, tvEmailUser;
 
@@ -79,6 +79,30 @@ public class ProfileFragment extends Fragment {
         tvUser.setText(user.getDisplayName());
         tvEmailUser.setText(user.getEmail());
         btnEditProfile = rootView.findViewById(R.id.btn_profile);
+        btnDaftarGuru = rootView.findViewById(R.id.btnDaftarGuru);
+        btnBantuan = rootView.findViewById(R.id.btn_bantuan);
+        btnRiwayat = rootView.findViewById(R.id.btn_riwayat);
+        btnRiwayat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), RiwayatPembayaran.class);
+                startActivity(intent);
+            }
+        });
+        btnBantuan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(), FAQ.class);
+                startActivity(intent);
+            }
+        });
+        btnDaftarGuru.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent start = new Intent(getContext(), DaftarGuru.class);
+                startActivity(start);
+            }
+        });
         btnEditProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
