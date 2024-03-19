@@ -2,7 +2,8 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/nav_info"
-        android:title="Informasi" />
+        android:title="Informasi"
+        android:actionLayout="@layout/style_profile_guru"/>
     <item
         android:id="@+id/nav_ulas"
         android:title="Ulasan" />

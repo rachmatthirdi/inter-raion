@@ -98,16 +98,20 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
-                <ImageView
-                    android:id="@+id/imageView15"
+                <ImageButton
+                    android:id="@+id/ButtonNotification"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="68dp"
-                    android:src="@drawable/bel_vector"
+                    android:layout_marginTop="22dp"
+                    android:src="@drawable/notif_vector"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.715"
+                    app:layout_constraintHorizontal_bias="1.15"
                     app:layout_constraintStart_toEndOf="@+id/textView17"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:contentDescription="@string/app_name"
+                    android:background="@android:color/transparent"
+                    android:padding="26dp"/>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
                     <TextView
                         android:layout_width="match_parent"

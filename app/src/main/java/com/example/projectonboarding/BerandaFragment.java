@@ -1,26 +1,28 @@
 package com.example.projectonboarding;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageButton;
+
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 
 public class BerandaFragment extends Fragment {
      AdapterRekomGuru adapterRekomGuru;
+    private ImageButton buttonNotification;
     RecyclerView rowRecyclerView;
     RecyclerView rowRecyclerViewBerita;
      List<ItemRekomendasiGuru> adapterRekomGuruList = new ArrayList<>();
@@ -51,6 +53,19 @@ public class BerandaFragment extends Fragment {
         rowRecyclerViewBerita.setLayoutManager(layoutManagerBerita);
         rowRecyclerViewBerita.setAdapter(adapterRekomGuruBerita);
         rowRecyclerViewBerita.setNestedScrollingEnabled(true);
+
+
+
+        buttonNotification = view.findViewById(R.id.ButtonNotification);
+
+        // Menambahkan onClickListener ke ImageButton
+        buttonNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Panggil metode untuk pindah ke halaman notifikasi
+                pindahKeHalamanNotifikasi();
+            }
+        });
 
         return view;
     }
@@ -97,6 +112,8 @@ public class BerandaFragment extends Fragment {
                 goToBeritaFragment();
             }
         });
+
+
     }
     private void goToBeritaFragment() {
         BeritaFragment beritaFragment = new BeritaFragment(); // Buat instance BeritaFragment
@@ -106,4 +123,13 @@ public class BerandaFragment extends Fragment {
                 .commit(); // Lakukan transaksi Fragment
     }
 
+
+    //untuk button notif
+    private void pindahKeHalamanNotifikasi() {
+        Intent intent = new Intent(getActivity(), ActivityNotifikasi.class);
+        startActivity(intent);
+    }
+
+
 }
+

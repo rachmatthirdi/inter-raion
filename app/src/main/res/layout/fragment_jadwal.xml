@@ -1,14 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".JadwalFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:layout_margin="10dp">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/satoshi_regular"
+            android:layout_marginStart="10dp"
+            android:text="Pada hari"
+            android:layout_marginBottom="10dp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/rounded_jadwal_guru_profile"
+                        android:fontFamily="@font/satoshi_bold"
+                        android:paddingVertical="15dp"
+                        android:paddingHorizontal="20sp"
+                        android:text="SEN"
+                        android:textColor="@color/secondary600"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/rounded_jadwal_guru_profile"
+                        android:fontFamily="@font/satoshi_bold"
+                        android:paddingVertical="15dp"
+                        android:paddingHorizontal="20sp"
+                        android:text="SEL"
+                        android:textColor="@color/secondary600"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/rounded_jadwal_guru_profile"
+                        android:fontFamily="@font/satoshi_bold"
+                        android:paddingVertical="15dp"
+                        android:paddingHorizontal="20sp"
+                        android:text="RAB"
+                        android:textColor="@color/secondary600"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/rounded_jadwal_guru_profile"
+                        android:fontFamily="@font/satoshi_bold"
+                        android:paddingVertical="15dp"
+                        android:paddingHorizontal="20sp"
+                        android:text="KAM"
+                        android:textColor="@color/secondary600"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/rounded_jadwal_guru_profile"
+                        android:fontFamily="@font/satoshi_bold"
+                        android:paddingVertical="15dp"
+                        android:paddingHorizontal="20sp"
+                        android:text="JUM"
+                        android:textColor="@color/secondary600"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/rounded_jadwal_guru_profile"
+                        android:fontFamily="@font/satoshi_bold"
+                        android:paddingVertical="15dp"
+                        android:paddingHorizontal="20sp"
+                        android:text="SAB"
+                        android:textColor="@color/secondary600"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/rounded_jadwal_guru_profile"
+                        android:fontFamily="@font/satoshi_bold"
+                        android:paddingVertical="15dp"
+                        android:paddingHorizontal="20sp"
+                        android:text="MIN"
+                        android:textColor="@color/secondary600"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/satoshi_regular"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="Waktu yang tersedia"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginVertical="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:padding="20dp"
+                    android:text="10.00 - 11.00"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:padding="20dp"
+                    android:text="13.00 - 14.00"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rounded_jadwal_guru_profile"
+                android:fontFamily="@font/satoshi_bold"
+                android:padding="20dp"
+                android:text="13.00 - 14.00"
+                android:textColor="@color/secondary600"
+                android:textSize="16sp"/>
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

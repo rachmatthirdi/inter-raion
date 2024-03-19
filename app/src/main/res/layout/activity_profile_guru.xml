@@ -1,37 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
-        <ScrollView
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="650dp">
+            android:layout_height="wrap_content">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/textProfile"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    android:text="Profil"
-                    android:fontFamily="@font/satoshi_bold"
-                    android:textSize="25sp"
-                    android:gravity="center_horizontal"/>
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/imageButtonBackProfileGuru"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        android:contentDescription="@string/app_name"
+                        android:padding="20dp"
+                        android:src="@drawable/vector_back" />
+
+                    <TextView
+                        android:id="@+id/textProfile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="105dp"
+                        android:fontFamily="@font/satoshi_bold"
+                        android:gravity="center_horizontal"
+                        android:padding="10dp"
+                        android:text="Profil"
+                        android:textSize="25sp" />
+
+                </LinearLayout>
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <ImageView
                         android:id="@+id/gambar_guru_besar"
@@ -47,10 +69,10 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:background="@drawable/layout_rating_guru"
-                        android:text="4.5"
                         android:fontFamily="@font/satoshi_bold"
-                        android:textColor="@color/white"
                         android:gravity="center"
+                        android:text="4.5"
+                        android:textColor="@color/white"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="@+id/gambar_guru_besar" />
 
@@ -60,31 +82,32 @@
                     android:id="@+id/textNamaGuruProfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:gravity="center_horizontal"
                     android:padding="2dp"
                     android:text="@string/nama_guru"
-                    android:fontFamily="@font/satoshi_bold"
-                    android:textSize="21sp"
-                    android:gravity="center_horizontal"/>
+                    android:textSize="21sp" />
+
                 <TextView
                     android:id="@+id/textMapelGuruProfile"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@string/mata_pelajaran"
-                    android:padding="2dp"
                     android:fontFamily="@font/satoshi_medium"
-                    android:textSize="15sp"
+                    android:gravity="center_horizontal"
+                    android:padding="2dp"
+                    android:text="@string/mata_pelajaran"
                     android:textColor="@color/gray"
-                    android:gravity="center_horizontal"/>
+                    android:textSize="15sp" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/box_profile_guru"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <ImageView
                         android:id="@+id/rectangleProfilGuru"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="353dp"
+                        android:layout_height="96dp"
                         android:src="@drawable/rectangle_profile_guru"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +143,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/rectangleProfilGuru"
                         app:layout_constraintTop_toBottomOf="@+id/tesediaUntuk"
-                        app:layout_constraintVertical_bias="0.0" />
+                        app:layout_constraintVertical_bias="0.285" />
 
                     <TextView
                         android:id="@+id/textGolongan2"
@@ -137,7 +160,8 @@
                         android:textSize="11sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintStart_toEndOf="@+id/textGolongan1"
-                        app:layout_constraintTop_toBottomOf="@+id/tesediaUntuk" />
+                        app:layout_constraintTop_toBottomOf="@+id/tesediaUntuk"
+                        app:layout_constraintVertical_bias="0.666" />
 
                     <ImageView
                         android:id="@+id/LineProfilGuru"
@@ -146,9 +170,9 @@
                         android:layout_marginStart="68dp"
                         android:paddingVertical="12dp"
                         android:src="@drawable/line_profile_guru"
-                        app:layout_constraintBottom_toBottomOf="rectangleProfilGuru"
+                        app:layout_constraintBottom_toBottomOf="@+id/rectangleProfilGuru"
                         app:layout_constraintStart_toStartOf="@id/textGolongan2"
-                        app:layout_constraintTop_toTopOf="rectangleProfilGuru" />
+                        app:layout_constraintTop_toTopOf="@+id/rectangleProfilGuru" />
 
                     <TextView
                         android:id="@+id/textGabung"
@@ -180,39 +204,70 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+                <LinearLayout
+                    android:layout_width="353dp"
+                    android:layout_height="400dp"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical"
+                    tools:context=".ActivityProfileGuru">
+
+
+                    <com.google.android.material.bottomnavigation.BottomNavigationView
+                        android:id="@+id/nav_profile_guru"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="@drawable/rounded_bar_profil_guru"
+                        app:menu="@menu/nav_profile_guru" />
+                    <androidx.core.widget.NestedScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <FrameLayout
+                            android:id="@+id/fragment_container_profile"
+                            android:contentDescription="@string/app_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="360dp"
+                            android:layout_marginBottom="60dp" />
+                    </androidx.core.widget.NestedScrollView>
+
+                </LinearLayout>
 
 
             </LinearLayout>
 
 
-        </ScrollView>
+        </androidx.core.widget.NestedScrollView>
+
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_horizontal"
             android:id="@+id/bar_hubungi_pesan_guru"
-            android:layout_marginTop="20dp">
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center_horizontal"
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
 
             <ImageButton
                 android:id="@+id/buttonMessage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/image_button_profile_guru"
-                tools:ignore="SpeakableTextPresentCheck"
+                android:background="@android:color/transparent"
                 android:contentDescription="@string/app_name"
-                android:background="@android:color/transparent"/>
+                android:padding="10dp"
+                android:src="@drawable/image_button_profile_guru"
+                tools:ignore="SpeakableTextPresentCheck" />
+
             <ImageButton
                 android:id="@+id/buttonContact"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@android:color/transparent"
                 android:layout_marginStart="20dp"
+                android:background="@android:color/transparent"
                 android:contentDescription="@string/app_name"
+                android:padding="10dp"
                 android:src="@drawable/hubungi_button_profile_guru" />
-    </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
