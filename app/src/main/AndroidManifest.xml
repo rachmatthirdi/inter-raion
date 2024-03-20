@@ -77,6 +77,12 @@
         <activity android:name=".Activity5" />
         <activity android:name=".ActivityProfileGuru" />
         <activity android:name=".ActivityNotifikasi" />
+        <activity android:name=".ActivityPesanPilihJadwal" />
+        <activity android:name=".ActivityPesanReview" />
+        <activity android:name=".ActivityPesanPembayaran" />
+        <activity android:name=".ActivityPembayaranLanjutan" />
+        <activity android:name=".ActivityPembayaranBerhasil" />
+        <activity android:name=".ActivityFAQs" />
     </application>
 
 </manifest>
