@@ -8,22 +8,22 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ActivityPesanReview extends AppCompatActivity {
+public class ActivityUbahAlamat extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pesan_review);
+        setContentView(R.layout.activity_ubah_alamat);
 
         // Mendapatkan referensi Button
-        Button buttonKonfirmasiReview = findViewById(R.id.buttonKonfirmasiReview);
+        Button buttonKonfirmasiReview = findViewById(R.id.buttonSimpanAlamat);
 
         // Menambahkan OnClickListener pada Button
         buttonKonfirmasiReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Membuat Intent untuk pindah ke ActivityPesanPembayaran
-                Intent intent = new Intent(ActivityPesanReview.this, ActivityPesanPembayaran.class);
+                Intent intent = new Intent(ActivityUbahAlamat.this, ActivityPesanReview.class);
                 startActivity(intent);
             }
         });
@@ -34,15 +34,6 @@ public class ActivityPesanReview extends AppCompatActivity {
             public void onClick(View v) {
                 // Kembali ke activity sebelumnya
                 onBackPressed();
-            }
-        });
-
-        Button gantiAlamatButton = findViewById(R.id.gantiAlamat);
-        gantiAlamatButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ActivityPesanReview.this, ActivityUbahAlamat.class);
-                startActivity(intent);
             }
         });
 
