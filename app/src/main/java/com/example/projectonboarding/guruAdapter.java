@@ -16,8 +16,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class guruAdapter extends RecyclerView.Adapter<guruAdapter.GuruViewHolder> {
-    Context context;
-    ArrayList<dbGuru> dbGuruArrayList;
+    private Context context;
+    private ArrayList<dbGuru> dbGuruArrayList;
     private OnItemClickListener listener;
     public interface OnItemClickListener{
         void onItemClick(int position);

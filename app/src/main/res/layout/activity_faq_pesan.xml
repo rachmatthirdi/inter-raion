@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/white1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FaqPesan">
@@ -11,7 +12,6 @@
         android:id="@+id/imageView25"
         android:layout_width="400dp"
         android:layout_height="140dp"
-        android:layout_marginStart="5dp"
         android:layout_marginEnd="6dp"
         android:scaleType="fitXY"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,13 +93,14 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView26" />
 
     <ImageButton
-        android:id="@+id/btnBacktoFaq"
+        android:id="@+id/balikFaq"
         android:layout_width="78dp"
         android:layout_height="60dp"
         android:layout_marginTop="36dp"
         android:backgroundTint="@color/secondary500"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toStartOf="@+id/textView33"
+        app:layout_constraintHorizontal_bias="0.317"
         app:layout_constraintStart_toStartOf="@+id/imageView25"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/arrow" />

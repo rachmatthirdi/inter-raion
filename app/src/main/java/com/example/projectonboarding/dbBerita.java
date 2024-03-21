@@ -1,7 +1,7 @@
 package com.example.projectonboarding;
 
 public class dbBerita {
-    String tanggal,judul,author;
+    private String tanggal,judul,author;
 
     public String getTanggal() {
         return tanggal;

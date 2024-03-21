@@ -6,9 +6,12 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,17 +19,27 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class BerandaFragment extends Fragment {
-     AdapterRekomGuru adapterRekomGuru;
+    private AdapterRekomGuru adapterRekomGuru;
     private ImageButton buttonNotification;
-    RecyclerView rowRecyclerView;
-    RecyclerView rowRecyclerViewBerita;
-     List<ItemRekomendasiGuru> adapterRekomGuruList = new ArrayList<>();
-    List<ItemBeritaPopuler> adapterBeritaPopulerList = new ArrayList<>();
+    private MyAdapter adapter;
+    private FirebaseFirestore db;
+    private ArrayList<dbBerita> dbBeritaArrayList;
+    private RecyclerView rowRecyclerView;
+    private RecyclerView rowRecyclerViewBerita;
+    private List<ItemRekomendasiGuru> adapterRekomGuruList = new ArrayList<>();
+    private List<ItemBeritaPopuler> adapterBeritaPopulerList = new ArrayList<>();
 
 
 
@@ -37,6 +50,9 @@ public class BerandaFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_beranda, container, false);
         addRekomGuru();
         rowRecyclerView = view.findViewById(R.id.recycle_rekom_guru);
+        db = FirebaseFirestore.getInstance();
+        dbBeritaArrayList = new ArrayList<dbBerita>();
+        adapter = new MyAdapter(getContext(),dbBeritaArrayList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         rowRecyclerView.setLayoutManager(layoutManager);
@@ -45,13 +61,13 @@ public class BerandaFragment extends Fragment {
         rowRecyclerView.setNestedScrollingEnabled(true);
 
 
-        addBeritaPopular();
+//        addBeritaPopular();
         rowRecyclerViewBerita = view.findViewById(R.id.recycle_populer_berita);
         LinearLayoutManager layoutManagerBerita = new LinearLayoutManager(requireContext());
         layoutManagerBerita.setOrientation(LinearLayoutManager.VERTICAL);
         AdapterBeritaPopuler adapterRekomGuruBerita = new AdapterBeritaPopuler(new BerandaFragment(), adapterBeritaPopulerList);
         rowRecyclerViewBerita.setLayoutManager(layoutManagerBerita);
-        rowRecyclerViewBerita.setAdapter(adapterRekomGuruBerita);
+        rowRecyclerViewBerita.setAdapter(adapter);
         rowRecyclerViewBerita.setNestedScrollingEnabled(true);
 
 
@@ -66,7 +82,7 @@ public class BerandaFragment extends Fragment {
                 pindahKeHalamanNotifikasi();
             }
         });
-
+        EventChangeListener();
         return view;
     }
     public void addRekomGuru(){
@@ -129,6 +145,29 @@ public class BerandaFragment extends Fragment {
     private void pindahKeHalamanNotifikasi() {
         Intent intent = new Intent(getActivity(), ActivityProfileGuru.class);
         startActivity(intent);
+    }
+
+    private void EventChangeListener(){
+        db.collection("berita").orderBy("judul", Query.Direction.ASCENDING).
+                addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        if (error!=null){
+
+                            Log.e("Firestore error",error.getMessage());
+                            return;
+                        }
+                        for (DocumentChange dc : value.getDocumentChanges()){
+                            if (dc.getType()== DocumentChange.Type.ADDED){
+                                dbBeritaArrayList.add(dc.getDocument().toObject(dbBerita.class));
+                            }
+
+                            adapter.notifyDataSetChanged();
+
+                        }
+
+                    }
+                });
     }
 
 

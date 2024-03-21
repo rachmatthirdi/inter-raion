@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,6 +27,7 @@ import java.util.regex.Pattern;
 public class Register extends AppCompatActivity {
     private EditText etUsername, etPassword, etEmail, etConfirmPassword;
     private Button btnRegister;
+    private TextView login;
     private DatabaseReference database;
     private ImageView arrowBack;
     private FirebaseAuth auth;
@@ -43,11 +45,18 @@ public class Register extends AppCompatActivity {
         etEmail = findViewById(R.id.etEmail);
         btnRegister = findViewById(R.id.btnRegistLog);
         arrowBack = findViewById(R.id.ivArrow);
+        login = findViewById(R.id.tvLogRest);
         etConfirmPassword = findViewById(R.id.etConfirmPassword);
         database = FirebaseDatabase.getInstance().getReferenceFromUrl(
                 "https://loginregist-ea208-default-rtdb.firebaseio.com/");
         auth = FirebaseAuth.getInstance();
-
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent keLogin = new Intent (getApplicationContext(), Login.class);
+                startActivity(keLogin);
+            }
+        });
         arrowBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

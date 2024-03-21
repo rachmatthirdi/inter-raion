@@ -23,10 +23,10 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class EditProfile extends AppCompatActivity {
-    EditText etNama,etTelepon;
-    Button btnSimpan;
-    FirebaseUser user;
-    Spinner spnPendidikan,spnDomisili;
+    private EditText etNama,etTelepon;
+    private Button btnSimpan;
+    private FirebaseUser user;
+    private Spinner spnPendidikan,spnDomisili;
     private String[] pendidikan,domisili;
 
     @Override
@@ -51,7 +51,7 @@ public class EditProfile extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Ada yang masih kosong", Toast.LENGTH_SHORT).show();
                 } else {
                     UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
-                            .setDisplayName(etNama.toString()).build();
+                            .setDisplayName(username).build();
                     user.updateProfile(profileChangeRequest)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
@@ -59,7 +59,7 @@ public class EditProfile extends AppCompatActivity {
 
                                 }
                             });
-                    user.verifyBeforeUpdateEmail(etTelepon.toString()).addOnCompleteListener(new OnCompleteListener<Void>() {
+                    user.verifyBeforeUpdateEmail(email).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             Toast.makeText(getApplicationContext(), "Username dan E-mail berhasil di update", Toast.LENGTH_SHORT).show();

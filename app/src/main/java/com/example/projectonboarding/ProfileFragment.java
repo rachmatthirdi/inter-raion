@@ -7,9 +7,12 @@ import android.os.Bundle;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -120,6 +123,7 @@ public class ProfileFragment extends Fragment {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
                 builder.setView(popup);
                 final AlertDialog alertDialog = builder.create();
+
                 alertDialog.show();
                 btn_logoutfix.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -144,6 +148,13 @@ public class ProfileFragment extends Fragment {
 
         return rootView;
     }
-
+    public void setPosition(int yValue) {
+        Window window = getActivity().getWindow();
+        WindowManager.LayoutParams param = window.getAttributes();
+        param.gravity = Gravity.TOP | Gravity.CENTER_HORIZONTAL;
+        param.y = yValue;
+        window.setAttributes(param);
+        window.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+    }
 
 }

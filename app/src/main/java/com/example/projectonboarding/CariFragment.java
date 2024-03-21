@@ -2,21 +2,25 @@ package com.example.projectonboarding;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import androidx.appcompat.widget.SearchView;
 import android.widget.Spinner;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -32,12 +36,13 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class CariFragment extends Fragment implements guruAdapter.OnItemClickListener{
-    RecyclerView recyclerView;
-    Button filter;
-    ArrayList<dbGuru> dbGuruArrayList;
+    private RecyclerView recyclerView;
+    private Button filter,cari;
+    private ArrayList<dbGuru> dbGuruArrayList;
     private ArrayList<dbGuru> dbGuruArrayListCopy;
-    guruAdapter guruAdapter;
-    FirebaseFirestore db;
+    private guruAdapter guruAdapter;
+    private FloatingActionButton fab;
+    private FirebaseFirestore db;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -85,11 +90,20 @@ public class CariFragment extends Fragment implements guruAdapter.OnItemClickLis
        View view = inflater.inflate(R.layout.fragment_cari,container,false);
        filter = view.findViewById(R.id.btnFilter);
        recyclerView = view.findViewById(R.id.rvGuru);
+        cari = view.findViewById(R.id.button6);
        recyclerView.setHasFixedSize(true);
+        fab = view.findViewById(R.id.floatingActionButton);
        recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
        db = FirebaseFirestore.getInstance();
        dbGuruArrayList = new ArrayList<dbGuru>();
       guruAdapter = new guruAdapter(getContext(),dbGuruArrayList,this);
+      fab.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View v) {
+              Intent intent = new Intent(getContext(), Chat.class);
+              startActivity(intent);
+          }
+      });
       recyclerView.setAdapter(guruAdapter);
         OnEventChangeListener();
         filter.setOnClickListener(new View.OnClickListener() {
@@ -99,6 +113,42 @@ public class CariFragment extends Fragment implements guruAdapter.OnItemClickLis
                     resetGuru();
                 }
                 showFilter();
+            }
+        });
+        cari.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!dbGuruArrayList.equals(dbGuruArrayListCopy)){
+                    resetGuru();
+                }
+                View popup = getLayoutInflater().inflate(R.layout.searchview_guru,null);
+                SearchView sv = popup.findViewById(R.id.searchViewGuru);
+                AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                builder.setView(popup);
+                AlertDialog alertDialog = builder.create();
+                int[] location = new int[2];
+                cari.getLocationOnScreen(location);
+                int x = location[0];
+                int y = location[1];
+                alertDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+                WindowManager.LayoutParams params = alertDialog.getWindow().getAttributes();
+                params.gravity = Gravity.TOP | Gravity.START;
+                params.x = x;
+                params.y = y + cari.getHeight();
+                alertDialog.getWindow().setAttributes(params);
+                alertDialog.show();
+                sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                    @Override
+                    public boolean onQueryTextSubmit(String query) {
+                        return false;
+                    }
+
+                    @Override
+                    public boolean onQueryTextChange(String newText) {
+                        searchRecycleView(newText);
+                        return true;
+                    }
+                });
             }
         });
        return view;
@@ -196,6 +246,16 @@ public class CariFragment extends Fragment implements guruAdapter.OnItemClickLis
         dbGuruArrayList.addAll(dbGuruArrayListCopy);
         guruAdapter.notifyDataSetChanged();
     }
+    private void searchRecycleView(String nama){
+        ArrayList<dbGuru> filteredList = new ArrayList<>();
+        for (dbGuru guru : dbGuruArrayList){
+            if (guru.getnama().toLowerCase().contains(nama)){
+                filteredList.add(guru);
 
+            }
+        }
+        dbGuruArrayList.clear();
+        dbGuruArrayList.addAll(filteredList);
+        guruAdapter.notifyDataSetChanged();
+    }
 }
-

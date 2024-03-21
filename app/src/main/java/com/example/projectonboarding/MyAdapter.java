@@ -17,8 +17,8 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    Context context;
-    ArrayList<dbBerita> dbBeritaArrayList;
+    private Context context;
+    private ArrayList<dbBerita> dbBeritaArrayList;
     private OnItemClickListener listener;
     public interface OnItemClickListener{
         void onItemClick(int position);
@@ -32,6 +32,10 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
         this.dbBeritaArrayList = dbBeritaArrayList;
         this.listener = listener;
     }
+    public MyAdapter(Context context,ArrayList<dbBerita> dbBeritaArrayList){
+        this.context = context;
+        this.dbBeritaArrayList = dbBeritaArrayList;
+    }
 
     @NonNull
     @Override
@@ -44,9 +48,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull MyAdapter.MyViewHolder holder, int position) {
         dbBerita berita = dbBeritaArrayList.get(position);
-        holder.tanggal.setText(berita.tanggal);
-        holder.judul.setText(berita.judul);
-        holder.author.setText(berita.author);
+        holder.tanggal.setText(berita.getTanggal());
+        holder.judul.setText(berita.getJudul());
+        holder.author.setText(berita.getAuthor());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override

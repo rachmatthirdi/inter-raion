@@ -17,9 +17,9 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.FragmentManager;
 
 public class DaftarGuru extends AppCompatActivity {
-    Button btnSelanjutnya;
-    Spinner spnMengajar;
-    ImageView btnBack;
+    private Button btnSelanjutnya;
+    private Spinner spnMengajar;
+    private ImageView btnBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

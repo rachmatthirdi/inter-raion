@@ -11,34 +11,36 @@ import android.widget.LinearLayout;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class FAQ extends AppCompatActivity {
-LinearLayout ll1,ll2;
-ImageButton btnBack;
+private CardView cv1,cv2;
+private ImageButton btnBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_faq);
-        ll1 = findViewById(R.id.linearLayout1);
-        ll2 = findViewById(R.id.linearLayout2);
-        btnBack = findViewById(R.id.btnBackFAQ);
+        cv1 = findViewById(R.id.cv1);
+        cv2 = findViewById(R.id.cv2);
+        btnBack = findViewById(R.id.btnBackFaq);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getOnBackPressedDispatcher().onBackPressed();
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
             }
         });
-        ll1.setOnClickListener(new View.OnClickListener() {
+        cv1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), FaqPesan.class);
                 startActivity(intent);
             }
         });
-        ll2.setOnClickListener(new View.OnClickListener() {
+        cv2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

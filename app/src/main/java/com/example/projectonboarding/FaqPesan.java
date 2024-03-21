@@ -9,13 +9,13 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FaqPesan extends AppCompatActivity {
-private ImageButton back;
+ private ImageButton back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_faq_pesan);
-        back.findViewById(R.id.btnBacktoFaq);
+        back = findViewById(R.id.balikFaq);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -58,7 +58,7 @@
         android:fontFamily="@font/satoshi_bold"
         android:text="Cari Gurumu"
         android:textColor="@color/white1"
-        app:icon="@drawable/ic_search"
+        app:icon="@drawable/vc_search"
         app:iconTint="@color/white1"
         app:layout_constraintEnd_toStartOf="@+id/btnFilter"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@
         android:fontFamily="@font/satoshi_bold"
         android:text="Filter"
         android:textColor="@color/white1"
-        app:icon="@drawable/ic_filter"
+        app:icon="@drawable/vc_filter"
         app:iconTint="@color/white1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
@@ -93,5 +93,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button6"
         app:layout_constraintVertical_bias="0.056" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/primary500"
+        android:clickable="true"
+        app:tint="@color/white1"
+        android:src="@drawable/vc_fab"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
     <!--        app:layout_constraintVertical_weight="1" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

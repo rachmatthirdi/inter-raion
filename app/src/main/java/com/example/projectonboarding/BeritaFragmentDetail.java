@@ -33,8 +33,8 @@ public class BeritaFragmentDetail extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    FirebaseFirestore db;
-    TextView tvJudul,tvAuthor,tvTanggal,tvIsi;
+    private FirebaseFirestore db;
+    private TextView tvJudul,tvAuthor,tvTanggal,tvIsi;
 
     public BeritaFragmentDetail() {
         // Required empty public constructor

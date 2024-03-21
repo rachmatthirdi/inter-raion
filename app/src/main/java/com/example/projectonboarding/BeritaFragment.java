@@ -34,11 +34,11 @@ import java.util.ArrayList;
  * create an instance of this fragment.
  */
 public class BeritaFragment extends Fragment implements MyAdapter.OnItemClickListener {
-    RecyclerView recyclerView;
-    ArrayList<dbBerita> dbBeritaArrayList;
-    MyAdapter myAdapter;
-    FirebaseFirestore db;
-    ProgressDialog progressDialog;
+    private RecyclerView recyclerView;
+    private ArrayList<dbBerita> dbBeritaArrayList;
+    private MyAdapter myAdapter;
+    private FirebaseFirestore db;
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -87,10 +87,7 @@ public class BeritaFragment extends Fragment implements MyAdapter.OnItemClickLis
                              Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.fragment_berita,container,false);
 
-        progressDialog = new ProgressDialog(getContext());
-        progressDialog.setCancelable(false);
-        progressDialog.setMessage("Mengambil data");
-        progressDialog.show();
+
        recyclerView = view.findViewById(R.id.rv_berita);
        recyclerView.setHasFixedSize(true);
        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -113,18 +110,12 @@ public class BeritaFragment extends Fragment implements MyAdapter.OnItemClickLis
                 @Override
                 public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
                     if (error!=null){
-                        if (progressDialog.isShowing()){
-                            progressDialog.dismiss();
-                        }
                         Log.e("Firestore error",error.getMessage());
                         return;
                     }
                     for (DocumentChange dc : value.getDocumentChanges()){
                         if (dc.getType()== DocumentChange.Type.ADDED){
                             dbBeritaArrayList.add(dc.getDocument().toObject(dbBerita.class));
-                        }
-                        if (progressDialog.isShowing()){
-                            progressDialog.dismiss();
                         }
                         myAdapter.notifyDataSetChanged();
 

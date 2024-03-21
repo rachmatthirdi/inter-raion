@@ -27,7 +27,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/imageButton"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/vc_bgatas" />
 
@@ -103,7 +103,7 @@
                 android:textColor="@color/black1"
                 android:textSize="20sp" />
 
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="350dp"
                 android:layout_height="200dp"
                 android:layout_marginStart="30dp"
@@ -186,18 +186,20 @@
                 app:iconGravity="end"
                 app:iconTint="@color/primary500"
                 app:strokeColor="@color/black1"/>
+
             <Button
                 android:id="@+id/button15"
-                android:layout_width="350dp"
-                android:layout_height="50dp"
                 style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:text="Selanjutnya"
-                android:fontFamily="@font/satoshi_bold"
-                android:textAllCaps="false"
-                android:textColor="@color/white1"
-                android:backgroundTint="@color/primary500"
+                android:layout_width="350dp"
+                android:layout_height="60dp"
                 android:layout_marginStart="30dp"
-                android:layout_marginTop="10dp"/>
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/primary500"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Selanjutnya"
+                android:textAllCaps="false"
+                android:textColor="@color/white1" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

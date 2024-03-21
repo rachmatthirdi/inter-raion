@@ -13,6 +13,12 @@
         android:theme="@style/Theme.AppLogin"
         tools:targetApi="31">
         <activity
+            android:name=".Chat1"
+            android:exported="false" />
+        <activity
+            android:name=".Chat"
+            android:exported="false" />
+        <activity
             android:name=".DaftarGuruEnd"
             android:exported="false" />
         <activity
