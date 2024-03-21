@@ -34,8 +34,10 @@ public class BerandaFragment extends Fragment {
     private AdapterRekomGuru adapterRekomGuru;
     private ImageButton buttonNotification;
     private MyAdapter adapter;
+    private guruAdapter guruAdapter;
     private FirebaseFirestore db;
     private ArrayList<dbBerita> dbBeritaArrayList;
+    private ArrayList<dbGuru> dbGuruArrayList;
     private RecyclerView rowRecyclerView;
     private RecyclerView rowRecyclerViewBerita;
     private List<ItemRekomendasiGuru> adapterRekomGuruList = new ArrayList<>();
@@ -52,12 +54,14 @@ public class BerandaFragment extends Fragment {
         rowRecyclerView = view.findViewById(R.id.recycle_rekom_guru);
         db = FirebaseFirestore.getInstance();
         dbBeritaArrayList = new ArrayList<dbBerita>();
+        dbGuruArrayList = new ArrayList<dbGuru>();
+        guruAdapter = new guruAdapter(getContext(),dbGuruArrayList);
         adapter = new MyAdapter(getContext(),dbBeritaArrayList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(requireContext());
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         rowRecyclerView.setLayoutManager(layoutManager);
         adapterRekomGuru = new AdapterRekomGuru(this, adapterRekomGuruList);
-        rowRecyclerView.setAdapter(adapterRekomGuru);
+        rowRecyclerView.setAdapter(guruAdapter);
         rowRecyclerView.setNestedScrollingEnabled(true);
 
 
@@ -82,6 +86,7 @@ public class BerandaFragment extends Fragment {
                 pindahKeHalamanNotifikasi();
             }
         });
+        OnEventChangeListener2();
         EventChangeListener();
         return view;
     }
@@ -143,7 +148,7 @@ public class BerandaFragment extends Fragment {
     //untuk button notif
     // harus ganti ke ActivityNotifikasi
     private void pindahKeHalamanNotifikasi() {
-        Intent intent = new Intent(getActivity(), ActivityProfileGuru.class);
+        Intent intent = new Intent(getActivity(),ActivityNotifikasi.class);
         startActivity(intent);
     }
 
@@ -164,6 +169,21 @@ public class BerandaFragment extends Fragment {
 
                             adapter.notifyDataSetChanged();
 
+                        }
+
+                    }
+                });
+    }
+    private void OnEventChangeListener2(){
+        db.collection("guru").orderBy("foto", Query.Direction.ASCENDING)
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        for (DocumentChange dc : value.getDocumentChanges()){
+                            if (dc.getType()== DocumentChange.Type.ADDED){
+                                dbGuruArrayList.add(dc.getDocument().toObject(dbGuru.class));
+                            }
+                            guruAdapter.notifyDataSetChanged();
                         }
 
                     }

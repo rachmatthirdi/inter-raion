@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="30sp"
             android:layout_marginEnd="2sp"
-            android:fontFamily="@font/satoshi_black"
+            android:fontFamily="@font/satoshi_bold"
             android:gravity="center_horizontal"
             android:text="judul berita 1 "
             android:textSize="17sp"

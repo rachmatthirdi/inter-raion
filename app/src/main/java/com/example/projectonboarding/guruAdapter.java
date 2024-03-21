@@ -31,6 +31,10 @@ public class guruAdapter extends RecyclerView.Adapter<guruAdapter.GuruViewHolder
         this.dbGuruArrayList = dbGuruArrayList;
         this.listener = listener;
     }
+    public guruAdapter(Context context,ArrayList<dbGuru> dbGuruArrayList){
+        this.context = context;
+        this.dbGuruArrayList = dbGuruArrayList;
+    }
 
     @NonNull
     @Override

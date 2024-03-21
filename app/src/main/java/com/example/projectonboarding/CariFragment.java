@@ -172,7 +172,23 @@ public class CariFragment extends Fragment implements guruAdapter.OnItemClickLis
 
     @Override
     public void onItemClick(int position) {
-
+        dbGuru guru = dbGuruArrayList.get(position);
+        String nama = guru.getnama();
+        String matpel = guru.getMatpel();
+        String jenjang1 = guru.getJenjang1();
+        String jenjang2 = guru.getJenjang2();
+        String rating = guru.getRating();
+        String foto = guru.getFoto();
+        Bundle bundle = new Bundle();
+        bundle.putString("nama_guru",nama);
+        bundle.putString("matpel_guru",matpel);
+        bundle.putString("jenjang1_guru",jenjang1);
+        bundle.putString("jenjang2_guru",jenjang2);
+        bundle.putString("rating_guru",rating);
+        bundle.putString("foto_guru",foto);
+        Intent intent = new Intent(getContext(), ActivityProfileGuru.class);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
     private void showFilter(){
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
