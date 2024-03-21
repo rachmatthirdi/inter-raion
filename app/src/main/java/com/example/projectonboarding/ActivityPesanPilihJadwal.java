@@ -30,18 +30,21 @@ public class ActivityPesanPilihJadwal extends AppCompatActivity {
         });
 
         TextView textBulanan = findViewById(R.id.textBulanan);
-        // Menambahkan OnClickListener pada TextView
-        textBulanan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Membuat dan menampilkan dialog fragment
-                OverlayDialogFragment dialogFragment = new OverlayDialogFragment();
-                dialogFragment.show(getSupportFragmentManager(), "OverlayDialogFragment");
+        ConstraintLayout constraintLayout = findViewById(R.id.textTanggalPesan); // Mengambil referensi ke ConstraintLayout
 
-                // Menampilkan ConstraintLayout saat TextView textBulanan ditekan
-                constraintLayout.setVisibility(View.VISIBLE);
-            }
+// Mengatur visibilitas ConstraintLayout menjadi invisible saat activity pertama kali dibuat
+        constraintLayout.setVisibility(View.INVISIBLE);
+
+// Menambahkan OnClickListener pada TextView
+        textBulanan.setOnClickListener(v -> {
+            // Membuat dan menampilkan dialog fragment
+            OverlayDialogFragment dialogFragment = new OverlayDialogFragment();
+            dialogFragment.show(getSupportFragmentManager(), "OverlayDialogFragment");
+
+            // Mengubah visibilitas ConstraintLayout menjadi visible saat TextView textBulanan ditekan
+            constraintLayout.setVisibility(View.VISIBLE);
         });
+
 
         // Mendapatkan referensi Button
         Button buttonSelanjutnya = findViewById(R.id.buttonSelanjutnyaPilihjadwal);

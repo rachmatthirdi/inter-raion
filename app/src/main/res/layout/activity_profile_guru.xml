@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white1"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -206,7 +207,7 @@
 
                 <LinearLayout
                     android:layout_width="353dp"
-                    android:layout_height="400dp"
+                    android:layout_height="380dp"
                     android:layout_gravity="center_horizontal"
                     android:orientation="vertical"
                     tools:context=".ActivityProfileGuru">
@@ -245,8 +246,9 @@
         <LinearLayout
             android:id="@+id/bar_hubungi_pesan_guru"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
+            android:layout_height="90dp"
             android:gravity="center_horizontal"
+            android:layout_marginBottom="40dp"
             android:layout_gravity="bottom"
             android:orientation="horizontal">
 

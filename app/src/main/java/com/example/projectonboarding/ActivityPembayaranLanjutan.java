@@ -35,8 +35,8 @@ public class ActivityPembayaranLanjutan extends AppCompatActivity {
         panahPilih1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Membuat Intent untuk pindah ke ActivityTujuan
-                Intent intent = new Intent(ActivityPembayaranLanjutan.this, ActivityFAQs.class);
+                // Membuat Intent untuk pindah ke ActivityFAQs
+                Intent intent = new Intent(ActivityPembayaranLanjutan.this, ActivityFAQsBNI.class);
                 startActivity(intent);
             }
         });
