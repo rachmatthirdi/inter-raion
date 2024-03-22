@@ -89,6 +89,7 @@ public class BeritaFragment extends Fragment implements MyAdapter.OnItemClickLis
 
 
        recyclerView = view.findViewById(R.id.rv_berita);
+        //noinspection InvalidSetHasFixedSize
        recyclerView.setHasFixedSize(true);
        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 

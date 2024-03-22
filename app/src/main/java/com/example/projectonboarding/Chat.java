@@ -1,7 +1,6 @@
 package com.example.projectonboarding;
 
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -11,9 +10,6 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class Chat extends AppCompatActivity {
     private CardView cv1,cv2;
@@ -28,7 +24,7 @@ public class Chat extends AppCompatActivity {
         setContentView(R.layout.activity_chat);
         guru1 = findViewById(R.id.chatguru1);
         guru2 = findViewById(R.id.chatguru2);
-        back = findViewById(R.id.imageButton3);
+        back = findViewById(R.id.imageButton4);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -36,7 +32,7 @@ public class Chat extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-       cv1 = findViewById(R.id.cardGuru1);
+       cv1 = findViewById(R.id.cardGuru3);
        cv1.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {

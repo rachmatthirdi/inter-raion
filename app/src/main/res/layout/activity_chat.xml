@@ -47,7 +47,7 @@
         app:srcCompat="@drawable/vc_putih" />
 
     <ImageButton
-        android:id="@+id/imageButton3"
+        android:id="@+id/imageButton4"
         android:layout_width="31dp"
         android:layout_height="30dp"
         android:layout_marginTop="58dp"
@@ -60,7 +60,7 @@
         app:srcCompat="@drawable/vc_back" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardGuru1"
+        android:id="@+id/cardGuru3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -136,7 +136,7 @@
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardGuru1"
+        app:layout_constraintTop_toBottomOf="@id/cardGuru3"
         app:srcCompat="@drawable/garis" />
 
     <androidx.cardview.widget.CardView
