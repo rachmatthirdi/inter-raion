@@ -6,12 +6,27 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_logomentorify"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/ic_logomentorify"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppLogin"
         tools:targetApi="31">
+        <activity
+            android:name=".EditProfileGuru"
+            android:exported="false" />
+        <activity
+            android:name=".ChatGuru1"
+            android:exported="false" />
+        <activity
+            android:name=".PendaftaranMurid"
+            android:exported="false" />
+        <activity
+            android:name=".ChatGuru"
+            android:exported="false" />
+        <activity
+            android:name=".MenuGuru"
+            android:exported="false" />
         <activity
             android:name=".Chat1"
             android:exported="false" />
@@ -88,8 +103,8 @@
         <activity android:name=".ActivityPesanPembayaran" />
         <activity android:name=".ActivityPembayaranLanjutan" />
         <activity android:name=".ActivityPembayaranBerhasil" />
-        <activity android:name=".ActivityFAQsBNI"/>
-        <activity android:name=".ActivityUbahAlamat"/>
+        <activity android:name=".ActivityFAQsBNI" />
+        <activity android:name=".ActivityUbahAlamat" />
     </application>
 
 </manifest>

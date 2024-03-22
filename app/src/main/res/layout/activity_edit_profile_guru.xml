@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:scrollbars="vertical"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:background="@color/white1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".EditProfileGuru"
+    >
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Edit Profil"
+        android:textColor="@color/black1"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView52"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.676" />
+
+    <ImageView
+        android:id="@+id/imageView41"
+        android:layout_width="32dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView47"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_black" />
+
+    <TextView
+        android:id="@+id/textView52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Informasi"
+        android:textColor="@color/black1"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView41" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView52">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Deskripsi"
+                android:textColor="@color/black1"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextText3"
+                android:layout_width="299dp"
+                android:layout_height="105dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/editextborder"
+                android:ems="10"
+                android:inputType="text" />
+
+            <Button
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="299dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Simpan"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/black1"
+                android:textSize="18sp"
+                app:icon="@drawable/vc_upload"
+                app:iconGravity="end"
+                app:iconTint="@color/primary500"
+                app:strokeColor="@color/black1" />
+
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Sertifikasi"
+                android:textColor="@color/black1"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextText4"
+                android:layout_width="299dp"
+                android:layout_height="105dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/editextborder"
+                android:ems="10"
+                android:inputType="text" />
+
+            <Button
+                android:id="@+id/button19"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="299dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Simpan"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/black1"
+                android:textSize="18sp"
+                app:icon="@drawable/vc_upload"
+                app:iconGravity="end"
+                app:iconTint="@color/primary500"
+                app:strokeColor="@color/black1" />
+
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20sp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Pengalaman"
+                android:textColor="@color/black1"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="299dp"
+                android:layout_height="105dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/editextborder"
+                android:ems="10"
+                android:inputType="text" />
+
+            <Button
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
+                android:layout_width="299dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Simpan"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:textColor="@color/black1"
+                android:textSize="18sp"
+                app:icon="@drawable/vc_upload"
+                app:iconGravity="end"
+                app:iconTint="@color/primary500"
+                app:strokeColor="@color/black1" />
+
+            <Button
+                android:id="@+id/btnSimpanEditGuru"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="299dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/primary500"
+                android:fontFamily="@font/satoshi_bold"
+                android:text="Simpan"
+                android:textAllCaps="false"
+                android:textColor="@color/white1" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+
