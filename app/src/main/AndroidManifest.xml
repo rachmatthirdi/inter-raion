@@ -90,6 +90,8 @@
         <activity android:name=".ActivityPembayaranBerhasil" />
         <activity android:name=".ActivityFAQsBNI"/>
         <activity android:name=".ActivityUbahAlamat"/>
+        <activity android:name=".ActivityAturJadwalProfilGuru"/>
+        <activity android:name=".ActivityPembayaranProfilGuru"/>
     </application>
 
 </manifest>

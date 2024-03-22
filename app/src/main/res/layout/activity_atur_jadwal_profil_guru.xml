@@ -1,0 +1,458 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp">
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:contentDescription="@string/app_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rectangle_biru_atas" />
+
+
+    <ImageButton
+        android:id="@+id/imageButtonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/app_name"
+        android:padding="20dp"
+        app:srcCompat="@drawable/back_white"
+        app:layout_constraintStart_toStartOf="@id/imageView14"
+        app:layout_constraintTop_toTopOf="@id/imageView14"
+        app:layout_constraintBottom_toBottomOf="@id/imageView14"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="@+id/imageView14"
+        app:layout_constraintStart_toStartOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/imageView14"/>
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Atur Jadwal"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="@+id/imageView14"
+        app:layout_constraintStart_toStartOf="@+id/imageView14"
+        app:layout_constraintTop_toTopOf="@+id/imageView14"/>
+
+    <TextView
+        android:id="@+id/textJadwalTersedia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/satoshi_bold"
+        android:text="Atur Jadwal"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView14"/>
+
+
+    <ScrollView
+        android:layout_marginTop="150dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:layout_gravity="start"
+                    android:text="Senin"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:text="Tambah Jam"
+                    android:textColor="@color/primary500"
+                    android:textSize="16sp"/>
+
+
+            </FrameLayout>
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="10.00 - 11.00"
+                    android:layout_gravity="start"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="13.00 - 14.00"
+                    android:layout_gravity="end"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:layout_marginVertical="10dp"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="13.00 - 14.00"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:layout_gravity="start"
+                    android:text="Selasa"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:text="Tambah Jam"
+                    android:textColor="@color/primary500"
+                    android:textSize="16sp"/>
+
+
+            </FrameLayout>
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="10.00 - 11.00"
+                    android:layout_gravity="start"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="13.00 - 14.00"
+                    android:layout_gravity="end"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_pilih_jadwal_profil_guru"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:layout_marginVertical="10dp"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="13.00 - 14.00"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/white1"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:layout_gravity="start"
+                    android:text="Rabu"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:text="Tambah Jam"
+                    android:textColor="@color/primary500"
+                    android:textSize="16sp"/>
+
+
+            </FrameLayout>
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="10.00 - 11.00"
+                    android:layout_gravity="start"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="13.00 - 14.00"
+                    android:layout_gravity="end"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:layout_marginVertical="10dp"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="13.00 - 14.00"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:layout_gravity="start"
+                    android:text="Kamis"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:text="Tambah Jam"
+                    android:textColor="@color/primary500"
+                    android:textSize="16sp"/>
+
+
+            </FrameLayout>
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="10.00 - 11.00"
+                    android:layout_gravity="start"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="13.00 - 14.00"
+                    android:layout_gravity="end"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:layout_marginVertical="10dp"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="13.00 - 14.00"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:layout_gravity="start"
+                    android:text="Jumat"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="@font/satoshi_regular"
+                    android:text="Tambah Jam"
+                    android:textColor="@color/primary500"
+                    android:textSize="16sp"/>
+
+
+            </FrameLayout>
+
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="125dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="10.00 - 11.00"
+                    android:layout_gravity="start"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="13.00 - 14.00"
+                    android:layout_gravity="end"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_jadwal_guru_profile"
+                    android:fontFamily="@font/satoshi_bold"
+                    android:layout_marginVertical="10dp"
+                    android:paddingHorizontal="25dp"
+                    android:paddingVertical="15dp"
+                    android:text="13.00 - 14.00"
+                    android:layout_gravity="bottom"
+                    android:textColor="@color/secondary600"
+                    android:textSize="16sp" />
+            </FrameLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
